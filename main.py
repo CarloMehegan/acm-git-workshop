@@ -1,8 +1,9 @@
 import random
 
 def calculate_compatibility(name1, name2) -> int:
-    names = [name1, name2]
-    seed = "".join(names)
+    alphabetized_names = sorted([name1, name2])
+    seed = "".join(alphabetized_names)
+    seed = seed.lower()
     gen = random.Random(seed)
     compatibility = (gen.random()) * 100 + 1
     return int(compatibility)
